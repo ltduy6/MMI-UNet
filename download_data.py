@@ -9,14 +9,7 @@ import shutil
 def download_datasets(file_id="1i4qVwj90w_uhBIwCGoJuI6gsXAcMtjgN", datasets_dir="./data/"):
     """
     Download datasets ZIP file from Google Drive and extract it.
-    Removes existing datasets folder if it exists.
     """
-    
-    # Remove existing datasets folder if it exists
-    if os.path.exists(datasets_dir):
-        print(f"🗑️  Removing existing datasets folder: {datasets_dir}")
-        shutil.rmtree(datasets_dir)
-        print("✅ Existing datasets folder removed")
     
     # Create fresh datasets directory
     os.makedirs(datasets_dir, exist_ok=True)
@@ -141,3 +134,4 @@ if __name__ == "__main__":
     download_datasets(file_id="1YY8eKBg-qVgeTaClZmMS8Lf_KU5QOHZn")
     download_datasets(file_id="1qQnobtAXuWvHNfSD3QEQ9_e7QvdA_pEZ", datasets_dir="./save_model/")
     download_datasets(file_id="1dRc3AnYk6tvgnm-UkdtJTZqoheLrxGJd", datasets_dir="./save_model/")
+    download_datasets(file_id="1_4nc4R5hswa-Xk0T8OfPIzHQ1eS-seuT", datasets_dir="./pretrained/")
