@@ -31,7 +31,7 @@ if __name__ == '__main__':
     dataset_name = 'mosmed'
     # load model        
     model = MMIUNet_Wrapper(args)
-    checkpoint = torch.load(f'./save_model/{dataset_name}/{args.model_save_filename}.ckpt',\
+    checkpoint = torch.load(f'./save_model/{dataset_name}/{args.model_save_filename}.ckpt',weights_only=False,
                     map_location='cpu')["state_dict"]
     model.load_state_dict(checkpoint, strict=True)
         
