@@ -164,7 +164,7 @@ class MMIUNet_Wrapper(pl.LightningModule):
         
         self.model = MMIUNet_V2(args.bert_type, args.vision_type, args.project_dim)
         model_dict = self.model.state_dict()
-        pre_dict = torch.load('./pretrained/convnext_tiny_22k_224.pth') 
+        pre_dict = torch.load('./pretrained/convnext_tiny_22k_224.pth', map_location='cpu', weights_only=False) 
         matched_dict = {k: v for k, v in pre_dict['model'].items() if k in model_dict and v.shape==model_dict[k].shape}
         model_dict.update(matched_dict)
         self.model.load_state_dict(model_dict)
