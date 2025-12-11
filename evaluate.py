@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # load model        
     model = MMIUNet_Wrapper(args)
     checkpoint = torch.load(f'./save_model/{dataset_name}/{args.model_save_filename}.ckpt',\
-                    map_location='cpu',weights_only=False)["state_dict"]
+                    map_location='cpu')["state_dict"]
     model.load_state_dict(checkpoint, strict=True)
         
 
